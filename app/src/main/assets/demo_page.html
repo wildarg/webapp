@@ -1,0 +1,42 @@
+<html>
+    <script type="text/javascript">
+        function showAndroidToast(toast) {
+            JSBridge.showToast(toast);
+        }
+
+        function openCamera() {
+            JSBridge.takeShot("test");
+        }
+
+        function test(s) {
+            document.getElementById("photo").src = s;
+        }
+
+        function makeCall(phone) {
+          JSBridge.makeCall(phone);
+        }
+
+    </script>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <div class="card-1">
+            <p>Show Android native toast message</p>
+            <input id="toast_button" type="button" value="Show Toast" onClick="showAndroidToast('Hello Android!')" />
+        </div>
+
+        <div class="card-1">
+            <p>Take a photo</p>
+            <input type="button" value="Open Camera" onClick="openCamera()" />
+            <img id="photo" src=""/>
+        </div>
+
+        <div class="card-1">
+            <p>Make a call to +65 8654 9179</p>
+            <input type="button" value="Dial" onClick="makeCall('+6586549179')" />
+        </div>
+
+    </body>
+</html>
